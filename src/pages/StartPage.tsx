@@ -1,12 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 const Title = styled.div`
   margin-top: 80px;
   font-size: 8em;
@@ -27,10 +21,10 @@ function StartPage() {
   };
 
   return (
-    <Container>
+    <>
       <Title>퍼스널 컬러 자가진단</Title>
       <StartBtn onClick={onStartBtnClicked}>시작하기</StartBtn>
-    </Container>
+    </>
   );
 }
 
