@@ -1,4 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
+import { questions } from "../QuestionData";
 
 const Container = styled.div`
   height: 70vh;
@@ -35,10 +37,28 @@ const BtnTwo = styled.div`
   font-size: 2rem;
 `;
 
+type questionIdxType =
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 11
+  | 12
+  | 13
+  | 14;
+
 function MainPage() {
+  const [questionIdx, setQuestionIdx] = useState<questionIdxType>(1);
+
   return (
     <Container>
-      <Question>Hello</Question>
+      <Question>{questions[questionIdx]["Q"]}</Question>
       <BtnContainer>
         <BtnOne />
         <BtnTwo />
