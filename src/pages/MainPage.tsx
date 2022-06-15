@@ -56,12 +56,21 @@ type questionIdxType =
 function MainPage() {
   const [questionIdx, setQuestionIdx] = useState<questionIdxType>(1);
 
+  const onAnswerBtnClicked = (BtnType: "a" | "b") => {
+    const nextQuestionIdx = questions[questionIdx]["A"][BtnType][1];
+    if (typeof nextQuestionIdx === "number") {
+      setQuestionIdx(nextQuestionIdx as questionIdxType);
+    } else {
+      console.log(nextQuestionIdx);
+    }
+  };
+
   return (
     <Container>
       <Question>{questions[questionIdx]["Q"]}</Question>
       <BtnContainer>
-        <BtnOne />
-        <BtnTwo />
+        <BtnOne onClick={() => onAnswerBtnClicked("a")}>one</BtnOne>
+        <BtnTwo onClick={() => onAnswerBtnClicked("b")}>two</BtnTwo>
       </BtnContainer>
     </Container>
   );
