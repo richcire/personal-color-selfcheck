@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { questions } from "../QuestionData";
 
@@ -55,6 +56,7 @@ type questionIdxType =
 
 function MainPage() {
   const [questionIdx, setQuestionIdx] = useState<questionIdxType>(1);
+  const navigate = useNavigate();
 
   const onAnswerBtnClicked = (BtnType: "a" | "b") => {
     const nextQuestionIdx = questions[questionIdx]["A"][BtnType][1];
@@ -62,6 +64,7 @@ function MainPage() {
       setQuestionIdx(nextQuestionIdx as questionIdxType);
     } else {
       console.log(nextQuestionIdx);
+      navigate(nextQuestionIdx);
     }
   };
 
