@@ -1,11 +1,11 @@
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import CardContainer from "../components/CardContainer";
 
 const Intro = styled.h2``;
 const Result = styled.div``;
 const Explanation = styled.div``;
 
-const CardContainer = styled.div``;
 const Card = styled.div``;
 
 function ResultPage() {
