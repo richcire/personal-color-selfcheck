@@ -64,7 +64,7 @@ function MainPage() {
       setQuestionIdx(nextQuestionIdx as questionIdxType);
     } else {
       console.log(nextQuestionIdx);
-      navigate(nextQuestionIdx);
+      navigate(`/${nextQuestionIdx}`);
     }
   };
 
