@@ -11,18 +11,27 @@ const Container = styled.div`
   column-gap: 30px;
   height: 60%;
   width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
 `;
 
 const Card = styled.div`
   height: 90%;
   border-radius: 20px;
+  width: 18%;
+  background-color: whitesmoke;
 `;
 
 const CardImg = styled.img`
   border-radius: 20px;
   height: 50%;
+  width: 100%;
 `;
-const CardBody = styled.div``;
+const CardBody = styled.div`
+  padding: 10px;
+  overflow-y: scroll;
+  font-size: 1rem;
+`;
 
 function CardContainer() {
   const resultData = useRecoilValue(result);

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import styled from "styled-components";
 import CardContainer from "../components/CardContainer";
@@ -37,14 +37,24 @@ const Explanation = styled.div`
   overflow: scroll;
 `;
 
-const Card = styled.div``;
+const GoBackBtn = styled.div`
+  position: fixed;
+  top: 5%;
+  right: 5%;
+`;
 
 function ResultPage() {
   const { id } = useParams();
   const [resultData, setResultData] = useRecoilState(result);
 
+  const navigate = useNavigate();
+
   let koreanResult = "봄 웜";
   let explanation = "";
+
+  const onGoBackBtnClicked = () => {
+    navigate("/");
+  };
 
   if (id === "springWarm") {
     koreanResult = "봄 웜";
@@ -66,6 +76,7 @@ function ResultPage() {
       <Explanation>{resultData.explanation}</Explanation>
 
       <CardContainer />
+      <GoBackBtn onClick={onGoBackBtnClicked}>다시 하기</GoBackBtn>
     </>
   );
 }
