@@ -20,6 +20,7 @@ const Card = styled.div`
   border-radius: 20px;
   width: 18%;
   background-color: whitesmoke;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 `;
 
 const CardImg = styled.img`
@@ -31,6 +32,7 @@ const CardBody = styled.div`
   padding: 10px;
   overflow-y: scroll;
   font-size: 1rem;
+  line-height: normal;
 `;
 
 function CardContainer() {

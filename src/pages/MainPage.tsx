@@ -15,7 +15,7 @@ const Container = styled.div`
 `;
 
 const Question = styled.div`
-  width: 800px;
+  width: 80%;
   margin: 0 auto;
   margin-top: 15px;
   font-size: 5rem;
@@ -31,11 +31,14 @@ const BtnContainer = styled.div`
   align-items: center;
   justify-content: space-evenly;
 `;
-const BtnOne = styled.div`
+
+const AnswerBtn = styled.div`
   font-size: 2rem;
-`;
-const BtnTwo = styled.div`
-  font-size: 2rem;
+  background-color: #b2bec3;
+  padding: 15px;
+  width: 10%;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 `;
 
 type questionIdxType =
@@ -72,8 +75,8 @@ function MainPage() {
     <Container>
       <Question>{questions[questionIdx]["Q"]}</Question>
       <BtnContainer>
-        <BtnOne onClick={() => onAnswerBtnClicked("a")}>one</BtnOne>
-        <BtnTwo onClick={() => onAnswerBtnClicked("b")}>two</BtnTwo>
+        <AnswerBtn onClick={() => onAnswerBtnClicked("a")}>one</AnswerBtn>
+        <AnswerBtn onClick={() => onAnswerBtnClicked("b")}>two</AnswerBtn>
       </BtnContainer>
     </Container>
   );

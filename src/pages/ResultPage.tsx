@@ -26,6 +26,7 @@ const Result = styled.div`
 `;
 
 const Explanation = styled.div`
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   background-color: whitesmoke;
   width: 50%;
   font-size: 1.2rem;
@@ -35,12 +36,19 @@ const Explanation = styled.div`
   align-items: center;
   justify-content: center;
   overflow: scroll;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: normal;
 `;
 
 const GoBackBtn = styled.div`
+  background-color: whitesmoke;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   position: fixed;
   top: 5%;
   right: 5%;
+  padding: 8px;
+  border-radius: 3px;
 `;
 
 function ResultPage() {
