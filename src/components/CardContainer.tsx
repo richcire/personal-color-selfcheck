@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { result } from "../Result";
 import { ICard } from "../ResultsSample";
 
 const Container = styled.div`
@@ -23,17 +25,22 @@ const CardImg = styled.img`
 const CardBody = styled.div``;
 
 function CardContainer() {
-  const { id } = useParams();
+  const resultData = useRecoilValue(result);
+
+  const cardDataArray: ICard[] = [
+    resultData.cardOne,
+    resultData.cardTwo,
+    resultData.cardThree,
+    resultData.cardFour,
+    resultData.cardFive,
+  ];
 
   return (
     <Container>
-      {Array.from({ length: 5 }, (x, i) => i).map((element) => (
-        <Card key={element}>
-          <CardImg src="https://www.ifamily.co.kr/image/arda/result/graph_spring_wl.jpg" />
-          <CardBody>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </CardBody>
+      {cardDataArray.map((card, index) => (
+        <Card key={index}>
+          <CardImg src={card.cardImg} />
+          <CardBody>{card.cardContent}</CardBody>
         </Card>
       ))}
     </Container>

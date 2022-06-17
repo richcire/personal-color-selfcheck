@@ -65,7 +65,7 @@ function ResultPage() {
       <Result>{koreanResult}</Result>
       <Explanation>{resultData.explanation}</Explanation>
 
-      <CardContainer></CardContainer>
+      <CardContainer />
     </>
   );
 }
