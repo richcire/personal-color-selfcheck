@@ -1,9 +1,9 @@
-interface ICard {
+export interface ICard {
   cardImg: string;
   cardContent: string;
 }
 
-interface IResultData {
+export interface IResultData {
   explanation: string;
   cardOne: ICard;
   cardTwo: ICard;

@@ -1,4 +1,6 @@
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
+import { ICard } from "../ResultsSample";
 
 const Container = styled.div`
   display: flex;
@@ -21,6 +23,8 @@ const CardImg = styled.img`
 const CardBody = styled.div``;
 
 function CardContainer() {
+  const { id } = useParams();
+
   return (
     <Container>
       {Array.from({ length: 5 }, (x, i) => i).map((element) => (

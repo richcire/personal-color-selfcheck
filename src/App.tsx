@@ -6,17 +6,20 @@ import MainPage from "./pages/MainPage";
 import styled from "styled-components";
 import "./index.css";
 import ResultPage from "./pages/ResultPage";
+import { RecoilRoot } from "recoil";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Reset />
-      <Routes>
-        <Route path="/" element={<StartPage />} />
-        <Route path="/main" element={<MainPage />} />
-        <Route path="/:id" element={<ResultPage />} />
-      </Routes>
-    </BrowserRouter>
+    <RecoilRoot>
+      <BrowserRouter>
+        <Reset />
+        <Routes>
+          <Route path="/" element={<StartPage />} />
+          <Route path="/main" element={<MainPage />} />
+          <Route path="/:id" element={<ResultPage />} />
+        </Routes>
+      </BrowserRouter>
+    </RecoilRoot>
   );
 }
 
